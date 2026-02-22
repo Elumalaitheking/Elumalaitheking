@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Emission Value Extractor</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+  </head>
+  <body>
+    <main class="container">
+      <h1>Analyzer Emission Value Extractor</h1>
+      <p class="subtitle">
+        Upload analyzer photos and extract NOx, CO, CO2, and O2 values automatically.
+      </p>
+
+      <section class="card">
+        <label for="imageInput">Upload analyzer photo</label>
+        <input id="imageInput" type="file" accept="image/*" />
+        <button id="extractBtn" type="button">Extract values</button>
+        <p id="status" class="status">Waiting for image...</p>
+      </section>
+
+      <section class="card output">
+        <h2>Detected Emission Values</h2>
+        <dl>
+          <div>
+            <dt>NOx</dt>
+            <dd id="noxValue">-</dd>
+          </div>
+          <div>
+            <dt>CO</dt>
+            <dd id="coValue">-</dd>
+          </div>
+          <div>
+            <dt>CO2</dt>
+            <dd id="co2Value">-</dd>
+          </div>
+          <div>
+            <dt>O2</dt>
+            <dd id="o2Value">-</dd>
+          </div>
+        </dl>
+      </section>
+
+      <details class="card raw-text">
+        <summary>Show OCR Text</summary>
+        <pre id="rawText">No OCR run yet.</pre>
+      </details>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
